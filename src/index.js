@@ -1,26 +1,42 @@
 // 1) librarias
 import React from 'react';
+import './style/App.css';
 import { createRoot } from 'react-dom/client';
 import { faker } from '@faker-js/faker';
+
 import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()} />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            {faker.name.fullName({ sex: 'female' })}
-          </a>
-          <div className="metadata">
-            <span className="date">Hoy a las 10:00</span>
-          </div>
-          <div className="text">{faker.lorem.sentence(6)}</div>
-        </div>
-      </div>
+      <ApprovalCard>
+        <h1>seguro de este paso?</h1>
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Dan"
+          timeAgo="Hoy a las 14:25"
+          text="Mensaje de contenido"
+          img={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Isa"
+          timeAgo="Ayer a las 19:50"
+          text="Mensaje de contenido 2"
+          img={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Sof"
+          timeAgo="Hoy a las 10:05"
+          text="Mensaje de contenido 3"
+          img={faker.image.avatar()}
+        />
+      </ApprovalCard>
     </div>
   );
 };
