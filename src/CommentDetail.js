@@ -1,12 +1,11 @@
-// 1) librarias
+   
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { faker } from "@faker-js/faker";
+// existe librería por importar en sample???
 
 
-const App = () => {
-  return (
-    <div className="ui container comments">
+const NombreObjeto = () => {
+	return (
+<div className="ui container comments">
       <div className='comment'>
         <a href='/' className='avatar'>
           <img alt='avatar' src={faker.image.avatar()} />
@@ -22,9 +21,5 @@ const App = () => {
         </div>
       </div>
     </div>
-  );
+	);
 };
-
-const container = document.getElementById('root');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<App tab="home" />);
